@@ -1,16 +1,17 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-const path = require('path')
+import { resolve } from 'path'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), vueJsx()],
   server: {
     open: '/'
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'components/index.ts'),
+      entry: resolve(__dirname, 'components/index.ts'),
       name: 'DForm',
       fileName: (format) => `d-form.${format}.js`
     },
