@@ -9,6 +9,12 @@ export default defineConfig({
   server: {
     open: '/'
   },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'packages'),
+      '@doc': resolve(__dirname, 'docs')
+    }
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'components/index.ts'),
